@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import firstapp.views
+import wordcount.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', firstapp.views.welcome, name="welcome"),
     path('hello/', firstapp.views.hello, name="hello"),
-    
+    path('home/', wordcount.views.home, name="home"),
+    path('home/result/', wordcount.views.result, name="result") 
 ]
